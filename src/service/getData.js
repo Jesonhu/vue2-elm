@@ -34,6 +34,13 @@ if (process.env.NODE_ENV == 'development') {
 	var cityGuess = () => fetch('GET', '/v1/cities', {
 		type: 'guess'
 	});
+  
+  // 便于理解方式 前台request: get, 'v1/cities'  <-- config/index.js 代理处理请求
+  var cityGuess = function() {
+    return fetch('GET', 'v1/cities', {
+      type: 'guess'
+    })
+  };
 
 
 	/**
